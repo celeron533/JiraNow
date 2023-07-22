@@ -36,13 +36,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxCookies = new System.Windows.Forms.TextBox();
             this.groupBoxFrom = new System.Windows.Forms.GroupBox();
-            this.groupBoxTo = new System.Windows.Forms.GroupBox();
-            this.textBoxFromId = new System.Windows.Forms.TextBox();
-            this.textBoxToId = new System.Windows.Forms.TextBox();
-            this.buttonFromFetch = new System.Windows.Forms.Button();
-            this.buttonToFetch = new System.Windows.Forms.Button();
             this.textBoxFromPreview = new System.Windows.Forms.TextBox();
+            this.buttonFromFetch = new System.Windows.Forms.Button();
+            this.textBoxFromId = new System.Windows.Forms.TextBox();
+            this.groupBoxTo = new System.Windows.Forms.GroupBox();
             this.textBoxToPreview = new System.Windows.Forms.TextBox();
+            this.buttonToFetch = new System.Windows.Forms.Button();
+            this.textBoxToId = new System.Windows.Forms.TextBox();
             this.buttonCopy = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.groupBoxFrom.SuspendLayout();
@@ -119,6 +119,32 @@
             this.groupBoxFrom.TabStop = false;
             this.groupBoxFrom.Text = "From";
             // 
+            // textBoxFromPreview
+            // 
+            this.textBoxFromPreview.Location = new System.Drawing.Point(30, 88);
+            this.textBoxFromPreview.Multiline = true;
+            this.textBoxFromPreview.Name = "textBoxFromPreview";
+            this.textBoxFromPreview.Size = new System.Drawing.Size(310, 262);
+            this.textBoxFromPreview.TabIndex = 8;
+            // 
+            // buttonFromFetch
+            // 
+            this.buttonFromFetch.Location = new System.Drawing.Point(265, 37);
+            this.buttonFromFetch.Name = "buttonFromFetch";
+            this.buttonFromFetch.Size = new System.Drawing.Size(75, 23);
+            this.buttonFromFetch.TabIndex = 7;
+            this.buttonFromFetch.Text = "Fetch";
+            this.buttonFromFetch.UseVisualStyleBackColor = true;
+            this.buttonFromFetch.Click += new System.EventHandler(this.buttonFromFetch_Click);
+            // 
+            // textBoxFromId
+            // 
+            this.textBoxFromId.Location = new System.Drawing.Point(30, 37);
+            this.textBoxFromId.Name = "textBoxFromId";
+            this.textBoxFromId.Size = new System.Drawing.Size(193, 21);
+            this.textBoxFromId.TabIndex = 6;
+            this.textBoxFromId.Text = "SAM-1";
+            // 
             // groupBoxTo
             // 
             this.groupBoxTo.Controls.Add(this.textBoxToPreview);
@@ -131,31 +157,13 @@
             this.groupBoxTo.TabStop = false;
             this.groupBoxTo.Text = "To";
             // 
-            // textBoxFromId
+            // textBoxToPreview
             // 
-            this.textBoxFromId.Location = new System.Drawing.Point(30, 37);
-            this.textBoxFromId.Name = "textBoxFromId";
-            this.textBoxFromId.Size = new System.Drawing.Size(193, 21);
-            this.textBoxFromId.TabIndex = 6;
-            this.textBoxFromId.Text = "SAM-1";
-            // 
-            // textBoxToId
-            // 
-            this.textBoxToId.Location = new System.Drawing.Point(27, 37);
-            this.textBoxToId.Name = "textBoxToId";
-            this.textBoxToId.Size = new System.Drawing.Size(193, 21);
-            this.textBoxToId.TabIndex = 7;
-            this.textBoxToId.Text = "SAM-2";
-            // 
-            // buttonFromFetch
-            // 
-            this.buttonFromFetch.Location = new System.Drawing.Point(265, 37);
-            this.buttonFromFetch.Name = "buttonFromFetch";
-            this.buttonFromFetch.Size = new System.Drawing.Size(75, 23);
-            this.buttonFromFetch.TabIndex = 7;
-            this.buttonFromFetch.Text = "Fetch";
-            this.buttonFromFetch.UseVisualStyleBackColor = true;
-            this.buttonFromFetch.Click += new System.EventHandler(this.buttonFromFetch_Click);
+            this.textBoxToPreview.Location = new System.Drawing.Point(27, 88);
+            this.textBoxToPreview.Multiline = true;
+            this.textBoxToPreview.Name = "textBoxToPreview";
+            this.textBoxToPreview.Size = new System.Drawing.Size(328, 262);
+            this.textBoxToPreview.TabIndex = 9;
             // 
             // buttonToFetch
             // 
@@ -166,21 +174,13 @@
             this.buttonToFetch.Text = "Fetch";
             this.buttonToFetch.UseVisualStyleBackColor = true;
             // 
-            // textBoxFromPreview
+            // textBoxToId
             // 
-            this.textBoxFromPreview.Location = new System.Drawing.Point(30, 88);
-            this.textBoxFromPreview.Multiline = true;
-            this.textBoxFromPreview.Name = "textBoxFromPreview";
-            this.textBoxFromPreview.Size = new System.Drawing.Size(310, 262);
-            this.textBoxFromPreview.TabIndex = 8;
-            // 
-            // textBoxToPreview
-            // 
-            this.textBoxToPreview.Location = new System.Drawing.Point(27, 88);
-            this.textBoxToPreview.Multiline = true;
-            this.textBoxToPreview.Name = "textBoxToPreview";
-            this.textBoxToPreview.Size = new System.Drawing.Size(328, 262);
-            this.textBoxToPreview.TabIndex = 9;
+            this.textBoxToId.Location = new System.Drawing.Point(27, 37);
+            this.textBoxToId.Name = "textBoxToId";
+            this.textBoxToId.Size = new System.Drawing.Size(193, 21);
+            this.textBoxToId.TabIndex = 7;
+            this.textBoxToId.Text = "SAM-2";
             // 
             // buttonCopy
             // 
