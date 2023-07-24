@@ -173,6 +173,7 @@
             this.buttonToFetch.TabIndex = 8;
             this.buttonToFetch.Text = "Fetch";
             this.buttonToFetch.UseVisualStyleBackColor = true;
+            this.buttonToFetch.Click += new System.EventHandler(this.buttonToFetch_Click);
             // 
             // textBoxToId
             // 

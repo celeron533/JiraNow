@@ -11,6 +11,7 @@ namespace JiraNow.Entities
     {
         public JiraIssue() { }
         public int ID { get; set; }
+        public string Key { get; set; }
         public List<JiraIssue> ChildIssues { get; set; }
         public int ProjectID { get; set; }
         public string ProjectName { get; set; }
@@ -27,6 +28,7 @@ namespace JiraNow.Entities
             JObject jfields = (JObject)jobject["fields"];
 
             issue.ID = (int)jobject["id"];
+            issue.Key = (string)jobject["key"];
 
             issue.ProjectID = (int)jfields["project"]["id"];
             issue.ProjectName = (string)jfields["project"]["name"];

@@ -11,5 +11,6 @@ namespace JiraNow
     {
         public HttpStatusCode httpStatusCode { get; set; }
         public string jsonMessage { get; set; }
+        public bool isSuccess { get; set; }
     }
 }

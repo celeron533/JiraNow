@@ -18,18 +18,52 @@ namespace JiraNow
             InitializeComponent();
         }
 
-        private async void buttonFromFetch_Click(object sender, EventArgs e)
+        JiraService jiraService;
+
+        private void RenewService()
         {
             string baseUri = textBoxApi.Text;
             string cookies = textBoxCookies.Text;
-            string fromId = textBoxFromId.Text;
-            JiraApi api = new JiraApi(baseUri, cookies);
-            JiraMessage message = await api.GetIssueByIdAsync(fromId);
-            textBoxFromPreview.Text = message.jsonMessage;
-            JiraIssue.Parse(message.jsonMessage);
+            jiraService = new JiraService(baseUri, cookies);
+        }
 
-            JiraMessage message2 = await api.SearchIssue("parent=SAM-1");
-            var aa = JiraSearchResult.Parse(message2.jsonMessage);
+        private async void buttonFromFetch_Click(object sender, EventArgs e)
+        {
+            RenewService();
+            string fromId = textBoxFromId.Text;
+            JiraIssue issue = await jiraService.GetIssue(fromId, true);
+            textBoxFromPreview.Text = GetIssueDisplayString(issue, true);
+        }
+
+        private async void buttonToFetch_Click(object sender, EventArgs e)
+        {
+            RenewService();
+            string toId = textBoxToId.Text;
+            JiraIssue issue = await jiraService.GetIssue(toId, true);
+            textBoxToPreview.Text = GetIssueDisplayString(issue, true);
+        }
+
+        private string GetIssueDisplayString(JiraIssue issue, bool includeChild = false)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine($"KEY:{issue.Key}, ID: {issue.ID}")
+                .AppendLine($"PROJECT: {issue.ProjectID}, {issue.ProjectName}")
+                .AppendLine($"TYPE: {issue.IssueTypeID}, {issue.IssueTypeName}")
+                .AppendLine($"Summary: {issue.Summary}")
+                .AppendLine($"Description: {issue.Description}");
+            if (includeChild)
+            {
+                sb.AppendLine($"====== Sub issues ({issue.ChildIssues.Count}) ======");
+                foreach (var child in issue.ChildIssues)
+                {
+                    sb.AppendLine($"> KEY:{child.Key}, ID: {child.ID}")
+                    .AppendLine($"  PROJECT: {child.ProjectID}, {child.ProjectName}")
+                    .AppendLine($"  TYPE: {child.IssueTypeID}, {child.IssueTypeName}")
+                    .AppendLine($"  Summary: {child.Summary}")
+                    .AppendLine($"  Description: {child.Description}");
+                }
+            }
+            return sb.ToString();
         }
     }
 }

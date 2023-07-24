@@ -60,8 +60,7 @@ namespace JiraNow
                 {
                     HttpResponseMessage response = await client.GetAsync(IssueUri+"/"+issueId);
 
-                    //response.EnsureSuccessStatusCode();
-
+                    message.isSuccess = response.IsSuccessStatusCode;
                     message.httpStatusCode = response.StatusCode;
                     message.jsonMessage = await response.Content.ReadAsStringAsync();
 
@@ -89,8 +88,7 @@ namespace JiraNow
                 {
                     HttpResponseMessage response = await client.GetAsync(SearchUri + "?jql=" + jql);
 
-                    //response.EnsureSuccessStatusCode();
-
+                    message.isSuccess = response.IsSuccessStatusCode;
                     message.httpStatusCode = response.StatusCode;
                     message.jsonMessage = await response.Content.ReadAsStringAsync();
 
