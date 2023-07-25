@@ -23,23 +23,22 @@ namespace JiraNow
             JiraApi api = new JiraApi(baseUri, cookiesStr);
             JiraIssue issue = null;
             JiraMessage issueMessage = await api.GetIssueByIdAsync(issueID);
-            if (issueMessage.isSuccess)
-            {
-                issue = JiraIssue.Parse(issueMessage.jsonMessage);
-                if (includeDirectChild)
-                {
-                    //todo: extract the logic
-                    JiraMessage searchResultMessage = await api.SearchIssue($"parent={issue.Key}");
-                    if (searchResultMessage.isSuccess)
-                    {
-                        issue.ChildIssues = JiraSearchResult.Parse(searchResultMessage.jsonMessage).Issues;
-                    }
-                }
-            }
 
+            issue = JiraIssue.Parse(issueMessage);
+            if (includeDirectChild && string.IsNullOrEmpty(issue.ErrorMessage))
+            {
+                //todo: extract the logic
+                JiraMessage searchResultMessage = await api.SearchIssue($"parent={issue.Key}");
+
+                issue.ChildIssues = JiraSearchResult.Parse(searchResultMessage.jsonMessage).Issues;
+            }
             return issue;
         }
 
 
+        public async Task CopyChildIssues(JiraIssue sourceIssue, JiraIssue destIssue)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

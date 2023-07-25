@@ -79,7 +79,7 @@
             this.textBoxApi.Name = "textBoxApi";
             this.textBoxApi.Size = new System.Drawing.Size(535, 21);
             this.textBoxApi.TabIndex = 2;
-            this.textBoxApi.Text = "https://celeron533.atlassian.net/rest/api/latest";
+            this.textBoxApi.Text = "https://celeron533.atlassian.net/rest/api/2";
             // 
             // label1
             // 
@@ -191,6 +191,7 @@
             this.buttonCopy.TabIndex = 9;
             this.buttonCopy.Text = "Copy >>";
             this.buttonCopy.UseVisualStyleBackColor = true;
+            this.buttonCopy.Click += new System.EventHandler(this.buttonCopy_Click);
             // 
             // MainForm
             // 

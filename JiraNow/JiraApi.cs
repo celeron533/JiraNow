@@ -1,4 +1,5 @@
-﻿using System;
+﻿using JiraNow.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -29,10 +30,13 @@ namespace JiraNow
             foreach(string item in items)
             {
                 string[] part = item.Trim().Split('=');
-                string key = part[0];
-                string value = part[1];
-                Cookie cookie = new Cookie(key, value);
-                cookieCollection.Add(cookie);
+                if (part.Length == 2)
+                {
+                    string key = part[0];
+                    string value = part[1];
+                    Cookie cookie = new Cookie(key, value);
+                    cookieCollection.Add(cookie);
+                }
             }
             return cookieCollection;
         }
@@ -101,6 +105,27 @@ namespace JiraNow
             return message;
         }
 
+        public async Task<JiraMessage> CreateIssue(JiraIssue issue)
+        {
+            string json = "";//todo
+            JiraMessage message = new JiraMessage();
+            using (HttpClient client = JiraHttpClient())
+            {
+                try
+                {
+                    HttpResponseMessage response = await client.PostAsync(IssueUri, json);
 
+                    message.isSuccess = response.IsSuccessStatusCode;
+                    message.httpStatusCode = response.StatusCode;
+                    message.jsonMessage = await response.Content.ReadAsStringAsync();
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error: " + ex.Message);
+                }
+            }
+            return message;
+        }
     }
 }
