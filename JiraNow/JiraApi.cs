@@ -113,11 +113,11 @@ namespace JiraNow
             {
                 try
                 {
-                    HttpResponseMessage response = await client.PostAsync(IssueUri, json);
+                    //HttpResponseMessage response = await client.PostAsync(IssueUri, json);
 
-                    message.isSuccess = response.IsSuccessStatusCode;
-                    message.httpStatusCode = response.StatusCode;
-                    message.jsonMessage = await response.Content.ReadAsStringAsync();
+                    //message.isSuccess = response.IsSuccessStatusCode;
+                    //message.httpStatusCode = response.StatusCode;
+                    //message.jsonMessage = await response.Content.ReadAsStringAsync();
 
                 }
                 catch (Exception ex)

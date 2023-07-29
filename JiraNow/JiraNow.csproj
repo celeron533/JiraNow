@@ -50,10 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\JiraIssue.cs" />
     <Compile Include="Entities\JiraSearchResult1.cs" />
     <Compile Include="JiraApi.cs" />
     <Compile Include="Entities\JiraIssue1.cs" />
     <Compile Include="JiraMessage.cs" />
+    <Compile Include="JiraSearchResult.cs" />
     <Compile Include="JiraService.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
