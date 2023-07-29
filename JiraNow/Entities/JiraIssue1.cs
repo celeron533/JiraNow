@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace JiraNow.Entities
 {
-    internal class JiraIssue
+    internal class JiraIssue1
     {
-        public JiraIssue() { }
+        public JiraIssue1() { }
 
         public HttpStatusCode StatusCode { get; set; }
         public string ErrorMessage { get; set; }
-        public List<JiraIssue> ChildIssues { get; set; }
+        public List<JiraIssue1> ChildIssues { get; set; }
 
         public int ID { get; set; }
         public string Key { get; set; }
@@ -27,14 +27,14 @@ namespace JiraNow.Entities
         public string Description { get; set; }
         public string Summary { get; set; }
 
-        public static JiraIssue Parse(JiraMessage jiraMessage)
+        public static JiraIssue1 Parse(JiraMessage jiraMessage)
         {
             return Parse(jiraMessage.jsonMessage, jiraMessage.httpStatusCode);
         }
 
-        public static JiraIssue Parse(string json, HttpStatusCode statusCode = 0)
+        public static JiraIssue1 Parse(string json, HttpStatusCode statusCode = 0)
         {
-            var issue = new JiraIssue();
+            var issue = new JiraIssue1();
             if (statusCode > 0)
             {
                 issue.StatusCode = statusCode;

@@ -31,7 +31,7 @@ namespace JiraNow
         {
             RenewService();
             string sourceID = textBoxFromId.Text;
-            JiraIssue issue = await jiraService.GetIssue(sourceID, true);
+            JiraIssue1 issue = await jiraService.GetIssue(sourceID, true);
             textBoxFromPreview.Text = GetIssueDisplayString(issue, true);
         }
 
@@ -39,11 +39,11 @@ namespace JiraNow
         {
             RenewService();
             string destID = textBoxToId.Text;
-            JiraIssue issue = await jiraService.GetIssue(destID, true);
+            JiraIssue1 issue = await jiraService.GetIssue(destID, true);
             textBoxToPreview.Text = GetIssueDisplayString(issue, true);
         }
 
-        private string GetIssueDisplayString(JiraIssue issue, bool includeChild = false)
+        private string GetIssueDisplayString(JiraIssue1 issue, bool includeChild = false)
         {
             if (issue == null) return null;
 
@@ -84,11 +84,11 @@ namespace JiraNow
         {
             RenewService();
             string sourceID = textBoxFromId.Text;
-            JiraIssue sourceIssue = await jiraService.GetIssue(sourceID, true);
+            JiraIssue1 sourceIssue = await jiraService.GetIssue(sourceID, true);
             textBoxFromPreview.Text = GetIssueDisplayString(sourceIssue, true);
 
             string destID = textBoxToId.Text;
-            JiraIssue destIssue = await jiraService.GetIssue(destID, true);
+            JiraIssue1 destIssue = await jiraService.GetIssue(destID, true);
             textBoxToPreview.Text = GetIssueDisplayString(destIssue, true);
 
             //validation

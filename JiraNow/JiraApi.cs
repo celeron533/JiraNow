@@ -105,7 +105,7 @@ namespace JiraNow
             return message;
         }
 
-        public async Task<JiraMessage> CreateIssue(JiraIssue issue)
+        public async Task<JiraMessage> CreateIssue(JiraIssue1 issue)
         {
             string json = "";//todo
             JiraMessage message = new JiraMessage();

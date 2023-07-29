@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace JiraNow.Entities
 {
-    internal class JiraSearchResult
+    internal class JiraSearchResult1
     {
-        public JiraSearchResult() { }
+        public JiraSearchResult1() { }
 
         public HttpStatusCode StatusCode { get; set; }
         public string ErrorMessage { get; set; }
@@ -18,16 +18,16 @@ namespace JiraNow.Entities
         public int StartAt { get; set; }
         public int MaxResults { get; set; }
         public int Total { get; set; }
-        public List<JiraIssue> Issues { get; set; }
+        public List<JiraIssue1> Issues { get; set; }
 
-        public static JiraSearchResult Parse(JiraMessage jiraMessage)
+        public static JiraSearchResult1 Parse(JiraMessage jiraMessage)
         {
             return Parse(jiraMessage.jsonMessage, jiraMessage.httpStatusCode);
         }
 
-        public static JiraSearchResult Parse(string json, HttpStatusCode statusCode = 0)
+        public static JiraSearchResult1 Parse(string json, HttpStatusCode statusCode = 0)
         {
-            var result = new JiraSearchResult();
+            var result = new JiraSearchResult1();
             if (statusCode > 0) 
             {
                 result.StatusCode = statusCode;
@@ -42,11 +42,11 @@ namespace JiraNow.Entities
             result.StartAt = (int)jobject["startAt"];
             result.MaxResults = (int)jobject["maxResults"];
             result.Total = (int)jobject["total"];
-            result.Issues = new List<JiraIssue>();
+            result.Issues = new List<JiraIssue1>();
             var jissues =jobject["issues"].ToList();
             foreach (JObject jissue in jissues)
             {
-                result.Issues.Add(JiraIssue.Parse(jissue.ToString()));
+                result.Issues.Add(JiraIssue1.Parse(jissue.ToString()));
             }
 
 
