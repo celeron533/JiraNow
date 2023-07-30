@@ -50,8 +50,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\AvatarUrls.cs" />
+    <Compile Include="Entities\Comment.cs" />
+    <Compile Include="Entities\Creator.cs" />
+    <Compile Include="Entities\Fields.cs" />
+    <Compile Include="Entities\Issuerestriction.cs" />
+    <Compile Include="Entities\Issuetype.cs" />
     <Compile Include="Entities\JiraIssue.cs" />
     <Compile Include="Entities\JiraSearchResult1.cs" />
+    <Compile Include="Entities\Priority.cs" />
+    <Compile Include="Entities\Progress.cs" />
+    <Compile Include="Entities\Project.cs" />
+    <Compile Include="Entities\Status.cs" />
+    <Compile Include="Entities\StatusCategory.cs" />
+    <Compile Include="Entities\Timetracking.cs" />
+    <Compile Include="Entities\Votes.cs" />
+    <Compile Include="Entities\Watches.cs" />
+    <Compile Include="Entities\Worklog.cs" />
     <Compile Include="JiraApi.cs" />
     <Compile Include="Entities\JiraIssue1.cs" />
     <Compile Include="JiraMessage.cs" />

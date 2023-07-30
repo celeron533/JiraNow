@@ -19,182 +19,67 @@ namespace JiraNow.Entities
 
     public partial class JiraSearchResult
     {
-        [JsonProperty("expand")]
+        [JsonProperty("expand", NullValueHandling = NullValueHandling.Ignore)]
         public string Expand { get; set; }
 
-        [JsonProperty("startAt")]
+        [JsonProperty("startAt", NullValueHandling = NullValueHandling.Ignore)]
         public long StartAt { get; set; }
 
-        [JsonProperty("maxResults")]
+        [JsonProperty("maxResults", NullValueHandling = NullValueHandling.Ignore)]
         public long MaxResults { get; set; }
 
-        [JsonProperty("total")]
+        [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
         public long Total { get; set; }
 
-        [JsonProperty("issues")]
+        [JsonProperty("issues", NullValueHandling = NullValueHandling.Ignore)]
         public List<Issue> Issues { get; set; }
     }
 
     public partial class Issue
     {
-        [JsonProperty("expand")]
+        [JsonProperty("expand", NullValueHandling = NullValueHandling.Ignore)]
         public string Expand { get; set; }
 
-        [JsonProperty("id")]
-        [JsonConverter(typeof(ParseStringConverter))]
+        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public long Id { get; set; }
 
-        [JsonProperty("self")]
+        [JsonProperty("self", NullValueHandling = NullValueHandling.Ignore)]
         public Uri Self { get; set; }
 
-        [JsonProperty("key")]
+        [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]
         public string Key { get; set; }
 
-        [JsonProperty("fields")]
-        public IssueFields Fields { get; set; }
+        [JsonProperty("fields", NullValueHandling = NullValueHandling.Ignore)]
+        public Fields Fields { get; set; }
     }
-
-    public partial class IssueFields
-    {
-        [JsonProperty("statuscategorychangedate")]
-        public string Statuscategorychangedate { get; set; }
-
-        [JsonProperty("issuetype")]
-        public Issuetype Issuetype { get; set; }
-
-        [JsonProperty("parent")]
-        public Parent Parent { get; set; }
-
-        [JsonProperty("timespent")]
-        public object Timespent { get; set; }
-
-        [JsonProperty("project")]
-        public Project Project { get; set; }
-
-        [JsonProperty("fixVersions")]
-        public List<object> FixVersions { get; set; }
-
-        [JsonProperty("aggregatetimespent")]
-        public object Aggregatetimespent { get; set; }
-
-        [JsonProperty("resolution")]
-        public object Resolution { get; set; }
-
-        [JsonProperty("resolutiondate")]
-        public object Resolutiondate { get; set; }
-
-        [JsonProperty("workratio")]
-        public long Workratio { get; set; }
-
-        [JsonProperty("watches")]
-        public Watches Watches { get; set; }
-
-        [JsonProperty("lastViewed")]
-        public string LastViewed { get; set; }
-
-        [JsonProperty("created")]
-        public string Created { get; set; }
-
-        [JsonProperty("priority")]
-        public Priority Priority { get; set; }
-
-        [JsonProperty("labels")]
-        public List<object> Labels { get; set; }
-
-        [JsonProperty("aggregatetimeoriginalestimate")]
-        public object Aggregatetimeoriginalestimate { get; set; }
-
-        [JsonProperty("timeestimate")]
-        public object Timeestimate { get; set; }
-
-        [JsonProperty("versions")]
-        public List<object> Versions { get; set; }
-
-        [JsonProperty("issuelinks")]
-        public List<object> Issuelinks { get; set; }
-
-        [JsonProperty("assignee")]
-        public Creator Assignee { get; set; }
-
-        [JsonProperty("updated")]
-        public string Updated { get; set; }
-
-        [JsonProperty("status")]
-        public Status Status { get; set; }
-
-        [JsonProperty("components")]
-        public List<object> Components { get; set; }
-
-        [JsonProperty("timeoriginalestimate")]
-        public object Timeoriginalestimate { get; set; }
-
-        [JsonProperty("description")]
-        public object Description { get; set; }
-
-        [JsonProperty("security")]
-        public object Security { get; set; }
-
-        [JsonProperty("aggregatetimeestimate")]
-        public object Aggregatetimeestimate { get; set; }
-
-        [JsonProperty("summary")]
-        public string Summary { get; set; }
-
-        [JsonProperty("creator")]
-        public Creator Creator { get; set; }
-
-        [JsonProperty("subtasks")]
-        public List<Parent> Subtasks { get; set; }
-
-        [JsonProperty("reporter")]
-        public Creator Reporter { get; set; }
-
-        [JsonProperty("aggregateprogress")]
-        public Progress Aggregateprogress { get; set; }
-
-        [JsonProperty("environment")]
-        public object Environment { get; set; }
-
-        [JsonProperty("duedate")]
-        public object Duedate { get; set; }
-
-        [JsonProperty("progress")]
-        public Progress Progress { get; set; }
-
-        [JsonProperty("votes")]
-        public Votes Votes { get; set; }
-    }
-
-
 
     public partial class Parent
     {
-        [JsonProperty("id")]
-        [JsonConverter(typeof(ParseStringConverter))]
+        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public long Id { get; set; }
 
-        [JsonProperty("key")]
+        [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]
         public string Key { get; set; }
 
-        [JsonProperty("self")]
+        [JsonProperty("self", NullValueHandling = NullValueHandling.Ignore)]
         public Uri Self { get; set; }
 
-        [JsonProperty("fields")]
+        [JsonProperty("fields", NullValueHandling = NullValueHandling.Ignore)]
         public ParentFields Fields { get; set; }
     }
 
     public partial class ParentFields
     {
-        [JsonProperty("summary")]
+        [JsonProperty("summary", NullValueHandling = NullValueHandling.Ignore)]
         public string Summary { get; set; }
 
-        [JsonProperty("status")]
+        [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public Status Status { get; set; }
 
-        [JsonProperty("priority")]
+        [JsonProperty("priority", NullValueHandling = NullValueHandling.Ignore)]
         public Priority Priority { get; set; }
 
-        [JsonProperty("issuetype")]
+        [JsonProperty("issuetype", NullValueHandling = NullValueHandling.Ignore)]
         public Issuetype Issuetype { get; set; }
     }
 
