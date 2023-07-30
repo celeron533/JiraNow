@@ -57,7 +57,6 @@
     <Compile Include="Entities\Issuerestriction.cs" />
     <Compile Include="Entities\Issuetype.cs" />
     <Compile Include="Entities\JiraIssue.cs" />
-    <Compile Include="Entities\JiraSearchResult1.cs" />
     <Compile Include="Entities\Parent.cs" />
     <Compile Include="Entities\ParentFields.cs" />
     <Compile Include="Entities\Priority.cs" />
@@ -70,7 +69,6 @@
     <Compile Include="Entities\Watches.cs" />
     <Compile Include="Entities\Worklog.cs" />
     <Compile Include="JiraApi.cs" />
-    <Compile Include="Entities\JiraIssue1.cs" />
     <Compile Include="JiraMessage.cs" />
     <Compile Include="Entities\JiraSearchResult.cs" />
     <Compile Include="JiraService.cs" />
