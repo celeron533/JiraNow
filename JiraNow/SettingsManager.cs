@@ -15,7 +15,7 @@ namespace JiraNow
 
         public static void SaveSettings(Settings settings, string filename = filename)
         {
-            JsonManager.SaveObjectToJsonFile(settings, filename);
+            JsonUtil.SaveObjectToJsonFile(settings, filename);
         }
 
         public static Settings LoadSettings(string filename = filename)
@@ -28,7 +28,7 @@ namespace JiraNow
             }
             else
             {
-                return JsonManager.LoadObjectFromJsonFile<Settings>(filename);
+                return JsonUtil.LoadObjectFromJsonFile<Settings>(filename);
             }
         }
     }

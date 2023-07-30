@@ -36,7 +36,7 @@ namespace JiraNow
         {
             RenewService();
             string sourceID = textBoxFromId.Text;
-            JiraIssue1 issue = await jiraService.GetIssue(sourceID, true);
+            JiraIssue issue = await jiraService.GetIssue(sourceID, true);
             textBoxFromPreview.Text = GetIssueDisplayString(issue, true);
         }
 
@@ -44,11 +44,11 @@ namespace JiraNow
         {
             RenewService();
             string destID = textBoxToId.Text;
-            JiraIssue1 issue = await jiraService.GetIssue(destID, true);
+            JiraIssue issue = await jiraService.GetIssue(destID, true);
             textBoxToPreview.Text = GetIssueDisplayString(issue, true);
         }
 
-        private string GetIssueDisplayString(JiraIssue1 issue, bool includeChild = false)
+        private string GetIssueDisplayString(JiraIssue issue, bool includeChild = false)
         {
             if (issue == null) return null;
 
@@ -57,10 +57,10 @@ namespace JiraNow
             {
                 return issue.ErrorMessage;
             }
-            sb.AppendLine($"KEY:{issue.Key}, ID: {issue.ID}")
-                .AppendLine($"PROJECT: {issue.ProjectID}, {issue.ProjectName}")
-                .AppendLine($"TYPE: {issue.IssueTypeID}, {issue.IssueTypeName}")
-                .AppendLine($"Summary: {issue.Summary}");
+            sb.AppendLine($"KEY:{issue.Key}, ID: {issue.Id}")
+                .AppendLine($"PROJECT: {issue.Fields.Project.Id}, {issue.Fields.Project.Name}")
+                .AppendLine($"TYPE: {issue.Fields.Issuetype.Id}, {issue.Fields.Issuetype.Name}")
+                .AppendLine($"Summary: {issue.Fields.Summary}");
             
             //.AppendLine($"Description: {issue.Description}");
             if (includeChild)
@@ -74,10 +74,10 @@ namespace JiraNow
                     }
                     else
                     {
-                        sb.AppendLine($"> KEY:{child.Key}, ID: {child.ID}")
-                        .AppendLine($"  PROJECT: {child.ProjectID}, {child.ProjectName}")
-                        .AppendLine($"  TYPE: {child.IssueTypeID}, {child.IssueTypeName}")
-                        .AppendLine($"  Summary: {child.Summary}");
+                        sb.AppendLine($"> KEY:{child.Key}, ID: {child.Id}")
+                        .AppendLine($"  PROJECT: {child.Fields.Project.Id}, {child.Fields.Project.Name}")
+                        .AppendLine($"  TYPE: {child.Fields.Issuetype.Id}, {child.Fields.Issuetype.Name}")
+                        .AppendLine($"  Summary: {child.Fields.Summary}");
                         //.AppendLine($"  Description: {child.Description}");
                     }
                 }
@@ -89,11 +89,11 @@ namespace JiraNow
         {
             RenewService();
             string sourceID = textBoxFromId.Text;
-            JiraIssue1 sourceIssue = await jiraService.GetIssue(sourceID, true);
+            JiraIssue sourceIssue = await jiraService.GetIssue(sourceID, true);
             textBoxFromPreview.Text = GetIssueDisplayString(sourceIssue, true);
 
             string destID = textBoxToId.Text;
-            JiraIssue1 destIssue = await jiraService.GetIssue(destID, true);
+            JiraIssue destIssue = await jiraService.GetIssue(destID, true);
             textBoxToPreview.Text = GetIssueDisplayString(destIssue, true);
 
             //validation
@@ -103,7 +103,7 @@ namespace JiraNow
                 return;
             }
 
-            if (sourceIssue.IssueTypeID != destIssue.IssueTypeID)
+            if (sourceIssue.Fields.Issuetype.Id != destIssue.Fields.Issuetype.Id)
             {
                 MessageBox.Show("source and destination issue type are different");
                 return;

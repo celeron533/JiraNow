@@ -85,7 +85,7 @@ namespace JiraNow.Entities
         public object Timeoriginalestimate { get; set; }
 
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
-        public string Description { get; set; }
+        public object Description { get; set; }
 
         [JsonProperty("timetracking", NullValueHandling = NullValueHandling.Ignore)]
         public Timetracking Timetracking { get; set; }
