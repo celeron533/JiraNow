@@ -22,7 +22,7 @@ namespace JiraNow.Entities
         public string Name { get; set; }
 
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
-        public long Id { get; set; }
+        public string Id { get; set; }
 
         [JsonProperty("statusCategory", NullValueHandling = NullValueHandling.Ignore)]
         public StatusCategory StatusCategory { get; set; }

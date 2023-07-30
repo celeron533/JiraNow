@@ -10,13 +10,13 @@ namespace JiraNow.Entities
     public class Worklog
     {
         [JsonProperty("startAt", NullValueHandling = NullValueHandling.Ignore)]
-        public long StartAt { get; set; }
+        public long? StartAt { get; set; }
 
         [JsonProperty("maxResults", NullValueHandling = NullValueHandling.Ignore)]
-        public long MaxResults { get; set; }
+        public long? MaxResults { get; set; }
 
         [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
-        public long Total { get; set; }
+        public long? Total { get; set; }
 
         [JsonProperty("worklogs", NullValueHandling = NullValueHandling.Ignore)]
         public List<object> Worklogs { get; set; }

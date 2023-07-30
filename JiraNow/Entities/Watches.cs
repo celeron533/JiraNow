@@ -13,9 +13,9 @@ namespace JiraNow.Entities
         public Uri Self { get; set; }
 
         [JsonProperty("watchCount", NullValueHandling = NullValueHandling.Ignore)]
-        public long WatchCount { get; set; }
+        public long? WatchCount { get; set; }
 
         [JsonProperty("isWatching", NullValueHandling = NullValueHandling.Ignore)]
-        public bool IsWatching { get; set; }
+        public bool? IsWatching { get; set; }
     }
 }

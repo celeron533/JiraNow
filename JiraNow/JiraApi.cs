@@ -1,4 +1,5 @@
 ﻿using JiraNow.Entities;
+using JiraNow.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -105,19 +106,20 @@ namespace JiraNow
             return message;
         }
 
-        public async Task<JiraMessage> CreateIssue(JiraIssue1 issue)
+        public async Task<JiraMessage> CreateIssue(JiraIssue issue)
         {
-            string json = "";//todo
             JiraMessage message = new JiraMessage();
             using (HttpClient client = JiraHttpClient())
             {
                 try
                 {
-                    //HttpResponseMessage response = await client.PostAsync(IssueUri, json);
+                    string json = JsonUtil.Serialize(issue);
+                    StringContent stringContent = new StringContent(json,Encoding.UTF8, "application/json"); // need to set the mediaType to "application/json"?
+                    HttpResponseMessage response = await client.PostAsync(IssueUri, stringContent);
 
-                    //message.isSuccess = response.IsSuccessStatusCode;
-                    //message.httpStatusCode = response.StatusCode;
-                    //message.jsonMessage = await response.Content.ReadAsStringAsync();
+                    message.isSuccess = response.IsSuccessStatusCode;
+                    message.httpStatusCode = response.StatusCode;
+                    message.jsonMessage = await response.Content.ReadAsStringAsync();
 
                 }
                 catch (Exception ex)

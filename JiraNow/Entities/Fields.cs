@@ -37,7 +37,7 @@ namespace JiraNow.Entities
         public object Resolutiondate { get; set; }
 
         [JsonProperty("workratio", NullValueHandling = NullValueHandling.Ignore)]
-        public long Workratio { get; set; }
+        public long? Workratio { get; set; }
 
         [JsonProperty("issuerestriction", NullValueHandling = NullValueHandling.Ignore)]
         public Issuerestriction Issuerestriction { get; set; }

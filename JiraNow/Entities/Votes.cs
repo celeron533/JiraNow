@@ -13,9 +13,9 @@ namespace JiraNow.Entities
         public Uri Self { get; set; }
 
         [JsonProperty("votes", NullValueHandling = NullValueHandling.Ignore)]
-        public long VotesVotes { get; set; }
+        public long? VotesVotes { get; set; }
 
         [JsonProperty("hasVoted", NullValueHandling = NullValueHandling.Ignore)]
-        public bool HasVoted { get; set; }
+        public bool? HasVoted { get; set; }
     }
 }

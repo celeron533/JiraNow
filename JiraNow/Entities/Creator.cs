@@ -25,7 +25,7 @@ namespace JiraNow.Entities
         public string DisplayName { get; set; }
 
         [JsonProperty("active", NullValueHandling = NullValueHandling.Ignore)]
-        public bool Active { get; set; }
+        public bool? Active { get; set; }
 
         [JsonProperty("timeZone", NullValueHandling = NullValueHandling.Ignore)]
         public string TimeZone { get; set; }

@@ -10,9 +10,9 @@ namespace JiraNow.Entities
     public class Progress
     {
         [JsonProperty("progress", NullValueHandling = NullValueHandling.Ignore)]
-        public long ProgressProgress { get; set; }
+        public long? ProgressProgress { get; set; }
 
         [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
-        public long Total { get; set; }
+        public long? Total { get; set; }
     }
 }

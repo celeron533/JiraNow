@@ -13,7 +13,7 @@ namespace JiraNow.Entities
         public Uri Self { get; set; }
 
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
-        public long Id { get; set; }
+        public string Id { get; set; }
 
         [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]
         public string Key { get; set; }
@@ -25,7 +25,7 @@ namespace JiraNow.Entities
         public string ProjectTypeKey { get; set; }
 
         [JsonProperty("simplified", NullValueHandling = NullValueHandling.Ignore)]
-        public bool Simplified { get; set; }
+        public bool? Simplified { get; set; }
 
         [JsonProperty("avatarUrls", NullValueHandling = NullValueHandling.Ignore)]
         public AvatarUrls AvatarUrls { get; set; }

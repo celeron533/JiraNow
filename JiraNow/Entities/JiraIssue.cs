@@ -24,7 +24,7 @@ namespace JiraNow.Entities
         public string Expand { get; set; }
 
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
-        public long Id { get; set; }
+        public string Id { get; set; }
 
         [JsonProperty("self", NullValueHandling = NullValueHandling.Ignore)]
         public Uri Self { get; set; }

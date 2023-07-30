@@ -13,7 +13,7 @@ namespace JiraNow.Entities
         public Uri Self { get; set; }
 
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
-        public long Id { get; set; }
+        public string Id { get; set; }
 
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
@@ -25,15 +25,15 @@ namespace JiraNow.Entities
         public string Name { get; set; }
 
         [JsonProperty("subtask", NullValueHandling = NullValueHandling.Ignore)]
-        public bool Subtask { get; set; }
+        public bool? Subtask { get; set; }
 
         [JsonProperty("avatarId", NullValueHandling = NullValueHandling.Ignore)]
-        public long AvatarId { get; set; }
+        public long? AvatarId { get; set; }
 
         [JsonProperty("entityId", NullValueHandling = NullValueHandling.Ignore)]
         public Guid EntityId { get; set; }
 
         [JsonProperty("hierarchyLevel", NullValueHandling = NullValueHandling.Ignore)]
-        public long HierarchyLevel { get; set; }
+        public long? HierarchyLevel { get; set; }
     }
 }

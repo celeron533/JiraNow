@@ -13,6 +13,6 @@ namespace JiraNow.Entities
         public Timetracking Issuerestrictions { get; set; }
 
         [JsonProperty("shouldDisplay", NullValueHandling = NullValueHandling.Ignore)]
-        public bool ShouldDisplay { get; set; }
+        public bool? ShouldDisplay { get; set; }
     }
 }

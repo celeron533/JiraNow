@@ -96,20 +96,14 @@ namespace JiraNow
             JiraIssue destIssue = await jiraService.GetIssue(destID, true);
             textBoxToPreview.Text = GetIssueDisplayString(destIssue, true);
 
-            //validation
-            if (!string.IsNullOrEmpty( sourceIssue.ErrorMessage) || !string.IsNullOrEmpty(destIssue.ErrorMessage) ) 
+            try
             {
-                MessageBox.Show("error when fetch the issue");
-                return;
+                await jiraService.CopyChildIssues(sourceIssue, destIssue);
             }
-
-            if (sourceIssue.Fields.Issuetype.Id != destIssue.Fields.Issuetype.Id)
+            catch (Exception ex) 
             {
-                MessageBox.Show("source and destination issue type are different");
-                return;
+                MessageBox.Show(ex.ToString());
             }
-
-            await jiraService.CopyChildIssues(sourceIssue, destIssue);
         }
 
         private void buttonSaveApi_Click(object sender, EventArgs e)
