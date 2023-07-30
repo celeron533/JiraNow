@@ -55,7 +55,7 @@
     <Compile Include="JiraApi.cs" />
     <Compile Include="Entities\JiraIssue1.cs" />
     <Compile Include="JiraMessage.cs" />
-    <Compile Include="JiraSearchResult.cs" />
+    <Compile Include="Entities\JiraSearchResult.cs" />
     <Compile Include="JiraService.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
