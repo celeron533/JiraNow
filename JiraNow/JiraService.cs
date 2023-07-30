@@ -11,16 +11,17 @@ namespace JiraNow
 {
     internal class JiraService
     {
-        string baseUri, cookiesStr;
-        public JiraService(string baseUri, string cookiesStr)
+        Uri hostUri;
+        string cookiesStr;
+        public JiraService(Settings settings)
         {
-            this.baseUri = baseUri;
-            this.cookiesStr = cookiesStr;
+            this.hostUri = new Uri(settings.HostString);
+            this.cookiesStr = settings.CookiesString;
         }
 
         public async Task<JiraIssue1> GetIssue(string issueID, bool includeDirectChild = false)
         {
-            JiraApi api = new JiraApi(baseUri, cookiesStr);
+            JiraApi api = new JiraApi(hostUri, cookiesStr);
             JiraIssue1 issue = null;
             JiraMessage issueMessage = await api.GetIssueByIdAsync(issueID);
 

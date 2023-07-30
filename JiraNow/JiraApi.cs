@@ -11,16 +11,16 @@ namespace JiraNow
 {
     internal class JiraApi
     {
-        public string BaseUri { get; private set; }
-        public string Cookies { get; private set; }
+        public Uri BaseUri { get; private set; }
+        public CookieCollection Cookies { get; private set; }
 
-        public string IssueUri => BaseUri + "/issue";
+        private string IssueUri => BaseUri + "/issue";
         public string SearchUri => BaseUri + "/search";
 
-        public JiraApi(string baseUri, string cookies)
+        public JiraApi(Uri hostUri, string cookiesString)
         {
-            BaseUri = baseUri;
-            Cookies = cookies;
+            BaseUri = new Uri(hostUri, "/rest/api/3");
+            Cookies = ParseCookieString(cookiesString);
         }
 
         CookieCollection ParseCookieString(string cookieString)
@@ -45,7 +45,7 @@ namespace JiraNow
         {
             HttpClientHandler handler = new HttpClientHandler();
             handler.CookieContainer = new System.Net.CookieContainer();
-            handler.CookieContainer.Add(new Uri(BaseUri), ParseCookieString(Cookies));
+            handler.CookieContainer.Add(BaseUri, Cookies);
             HttpClient client = new HttpClient(handler);
             //client.DefaultRequestHeaders.Add("Accept-Encoding", "br");
             //client.DefaultRequestHeaders.Add("Accept-Language", "zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7");

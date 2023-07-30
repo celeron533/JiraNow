@@ -16,15 +16,20 @@ namespace JiraNow
         public MainForm()
         {
             InitializeComponent();
+            Init();
         }
 
         JiraService jiraService;
+        Settings settings;
+
+        void Init()
+        {
+            LoadSettings();
+        }
 
         private void RenewService()
         {
-            string baseUri = textBoxApi.Text;
-            string cookies = textBoxCookies.Text;
-            jiraService = new JiraService(baseUri, cookies);
+            jiraService = new JiraService(settings);
         }
 
         private async void buttonFromFetch_Click(object sender, EventArgs e)
@@ -105,6 +110,30 @@ namespace JiraNow
             }
 
             await jiraService.CopyChildIssues(sourceIssue, destIssue);
+        }
+
+        private void buttonSaveApi_Click(object sender, EventArgs e)
+        {
+            SaveSettings();
+        }
+
+        private void buttonLoadApi_Click(object sender, EventArgs e)
+        {
+            LoadSettings();
+        }
+
+        void SaveSettings()
+        {
+            settings.HostString = textBoxApiHost.Text;
+            settings.CookiesString = textBoxCookies.Text;
+            SettingsManager.SaveSettings(settings);
+        }
+
+        void LoadSettings()
+        {
+            settings = SettingsManager.LoadSettings();
+            textBoxApiHost.Text = settings.HostString;
+            textBoxCookies.Text = settings.CookiesString;
         }
     }
 }
