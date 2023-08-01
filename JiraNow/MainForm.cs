@@ -129,5 +129,10 @@ namespace JiraNow
             textBoxApiHost.Text = settings.HostString;
             textBoxCookies.Text = settings.CookiesString;
         }
+
+        private void checkBoxShowCookies_CheckedChanged(object sender, EventArgs e)
+        {
+            textBoxCookies.PasswordChar = ((CheckBox) sender).Checked ? (char)0 : '*';
+        }
     }
 }
