@@ -24,7 +24,7 @@ namespace JiraNow
             api = new JiraApi(hostUri, cookiesStr);
         }
 
-        public async Task<JiraIssue> GetIssue(string issueID, bool includeDirectChild = false)
+        public async Task<JiraIssue> GetIssue(string issueID, bool includeDirectChild = true)
         {
             JiraIssue issue = null;
             JiraMessage issueMessage = await api.GetIssueByIdAsync(issueID);
@@ -58,12 +58,12 @@ namespace JiraNow
             //validation
             if (!string.IsNullOrEmpty(sourceIssue.ErrorMessage) || !string.IsNullOrEmpty(destIssue.ErrorMessage))
             {
-                throw new Exception("error when fetch the issue");
+                throw new Exception("Error when fetching the issue");
             }
 
             if (sourceIssue.Fields.Issuetype.Id != destIssue.Fields.Issuetype.Id)
             {
-                throw new NotSupportedException("source and destination issue type are different");
+                throw new NotSupportedException("Source and destination issue type are different");
             }
 
             IList<JiraIssue> destNewChildIssues = new List<JiraIssue>();

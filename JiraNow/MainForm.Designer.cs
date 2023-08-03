@@ -54,10 +54,12 @@
             this.buttonLoadApi = new System.Windows.Forms.Button();
             this.buttonSaveApi = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.checkBoxShowCookies = new System.Windows.Forms.CheckBox();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.groupBoxFrom.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -68,14 +70,16 @@
             this.groupBoxAPI.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel9.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
-            this.tableLayoutPanel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // statusStrip1
             // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 450);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 414);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(768, 22);
             this.statusStrip1.TabIndex = 0;
@@ -87,22 +91,22 @@
             this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(768, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(768, 25);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(39, 21);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // textBoxApiHost
             // 
             this.textBoxApiHost.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxApiHost.Location = new System.Drawing.Point(3, 5);
+            this.textBoxApiHost.Location = new System.Drawing.Point(3, 4);
             this.textBoxApiHost.Name = "textBoxApiHost";
-            this.textBoxApiHost.Size = new System.Drawing.Size(555, 20);
+            this.textBoxApiHost.Size = new System.Drawing.Size(539, 21);
             this.textBoxApiHost.TabIndex = 2;
             this.textBoxApiHost.Text = "https://<your account name>.atlassian.net";
             // 
@@ -110,9 +114,9 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 9);
+            this.label1.Location = new System.Drawing.Point(3, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 13);
+            this.label1.Size = new System.Drawing.Size(53, 12);
             this.label1.TabIndex = 3;
             this.label1.Text = "API Host";
             // 
@@ -120,9 +124,9 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(5, 47);
+            this.label2.Location = new System.Drawing.Point(6, 41);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 13);
+            this.label2.Size = new System.Drawing.Size(47, 12);
             this.label2.TabIndex = 4;
             this.label2.Text = "Cookies";
             // 
@@ -133,7 +137,7 @@
             this.textBoxCookies.Name = "textBoxCookies";
             this.textBoxCookies.PasswordChar = '*';
             this.textBoxCookies.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxCookies.Size = new System.Drawing.Size(551, 34);
+            this.textBoxCookies.Size = new System.Drawing.Size(551, 31);
             this.textBoxCookies.TabIndex = 5;
             // 
             // groupBoxFrom
@@ -142,7 +146,7 @@
             this.groupBoxFrom.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBoxFrom.Location = new System.Drawing.Point(3, 3);
             this.groupBoxFrom.Name = "groupBoxFrom";
-            this.groupBoxFrom.Size = new System.Drawing.Size(337, 311);
+            this.groupBoxFrom.Size = new System.Drawing.Size(337, 281);
             this.groupBoxFrom.TabIndex = 6;
             this.groupBoxFrom.TabStop = false;
             this.groupBoxFrom.Text = "From";
@@ -154,22 +158,22 @@
             this.tableLayoutPanel3.Controls.Add(this.textBoxFromPreview, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel5, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 16);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 17);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(331, 292);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(331, 261);
             this.tableLayoutPanel3.TabIndex = 9;
             // 
             // textBoxFromPreview
             // 
             this.textBoxFromPreview.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxFromPreview.Location = new System.Drawing.Point(3, 49);
+            this.textBoxFromPreview.Location = new System.Drawing.Point(3, 46);
             this.textBoxFromPreview.Multiline = true;
             this.textBoxFromPreview.Name = "textBoxFromPreview";
             this.textBoxFromPreview.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxFromPreview.Size = new System.Drawing.Size(325, 240);
+            this.textBoxFromPreview.Size = new System.Drawing.Size(325, 212);
             this.textBoxFromPreview.TabIndex = 8;
             // 
             // tableLayoutPanel5
@@ -185,14 +189,14 @@
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(325, 40);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(325, 37);
             this.tableLayoutPanel5.TabIndex = 9;
             // 
             // textBoxFromId
             // 
             this.textBoxFromId.Location = new System.Drawing.Point(3, 3);
             this.textBoxFromId.Name = "textBoxFromId";
-            this.textBoxFromId.Size = new System.Drawing.Size(124, 20);
+            this.textBoxFromId.Size = new System.Drawing.Size(124, 21);
             this.textBoxFromId.TabIndex = 6;
             this.textBoxFromId.Text = "SAM-1";
             // 
@@ -200,7 +204,7 @@
             // 
             this.buttonFromFetch.Location = new System.Drawing.Point(247, 3);
             this.buttonFromFetch.Name = "buttonFromFetch";
-            this.buttonFromFetch.Size = new System.Drawing.Size(75, 25);
+            this.buttonFromFetch.Size = new System.Drawing.Size(75, 23);
             this.buttonFromFetch.TabIndex = 7;
             this.buttonFromFetch.Text = "Fetch";
             this.buttonFromFetch.UseVisualStyleBackColor = true;
@@ -212,7 +216,7 @@
             this.groupBoxTo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBoxTo.Location = new System.Drawing.Point(422, 3);
             this.groupBoxTo.Name = "groupBoxTo";
-            this.groupBoxTo.Size = new System.Drawing.Size(337, 311);
+            this.groupBoxTo.Size = new System.Drawing.Size(337, 281);
             this.groupBoxTo.TabIndex = 7;
             this.groupBoxTo.TabStop = false;
             this.groupBoxTo.Text = "To";
@@ -224,22 +228,22 @@
             this.tableLayoutPanel4.Controls.Add(this.textBoxToPreview, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel6, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 16);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 17);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(331, 292);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(331, 261);
             this.tableLayoutPanel4.TabIndex = 10;
             // 
             // textBoxToPreview
             // 
             this.textBoxToPreview.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxToPreview.Location = new System.Drawing.Point(3, 49);
+            this.textBoxToPreview.Location = new System.Drawing.Point(3, 46);
             this.textBoxToPreview.Multiline = true;
             this.textBoxToPreview.Name = "textBoxToPreview";
             this.textBoxToPreview.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxToPreview.Size = new System.Drawing.Size(325, 240);
+            this.textBoxToPreview.Size = new System.Drawing.Size(325, 212);
             this.textBoxToPreview.TabIndex = 9;
             // 
             // tableLayoutPanel6
@@ -255,14 +259,14 @@
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(325, 40);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(325, 37);
             this.tableLayoutPanel6.TabIndex = 10;
             // 
             // textBoxToId
             // 
             this.textBoxToId.Location = new System.Drawing.Point(3, 3);
             this.textBoxToId.Name = "textBoxToId";
-            this.textBoxToId.Size = new System.Drawing.Size(124, 20);
+            this.textBoxToId.Size = new System.Drawing.Size(124, 21);
             this.textBoxToId.TabIndex = 7;
             this.textBoxToId.Text = "SAM-2";
             // 
@@ -270,7 +274,7 @@
             // 
             this.buttonToFetch.Location = new System.Drawing.Point(247, 3);
             this.buttonToFetch.Name = "buttonToFetch";
-            this.buttonToFetch.Size = new System.Drawing.Size(75, 25);
+            this.buttonToFetch.Size = new System.Drawing.Size(75, 23);
             this.buttonToFetch.TabIndex = 8;
             this.buttonToFetch.Text = "Fetch";
             this.buttonToFetch.UseVisualStyleBackColor = true;
@@ -279,9 +283,9 @@
             // buttonCopy
             // 
             this.buttonCopy.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonCopy.Location = new System.Drawing.Point(346, 146);
+            this.buttonCopy.Location = new System.Drawing.Point(346, 132);
             this.buttonCopy.Name = "buttonCopy";
-            this.buttonCopy.Size = new System.Drawing.Size(70, 25);
+            this.buttonCopy.Size = new System.Drawing.Size(70, 23);
             this.buttonCopy.TabIndex = 9;
             this.buttonCopy.Text = "Copy >>";
             this.buttonCopy.UseVisualStyleBackColor = true;
@@ -291,10 +295,10 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(561, 9);
+            this.label3.Location = new System.Drawing.Point(545, 8);
             this.label3.Margin = new System.Windows.Forms.Padding(0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 13);
+            this.label3.Size = new System.Drawing.Size(71, 12);
             this.label3.TabIndex = 10;
             this.label3.Text = "/rest/api/3";
             // 
@@ -305,7 +309,7 @@
             this.groupBoxAPI.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBoxAPI.Location = new System.Drawing.Point(3, 3);
             this.groupBoxAPI.Name = "groupBoxAPI";
-            this.groupBoxAPI.Size = new System.Drawing.Size(762, 97);
+            this.groupBoxAPI.Size = new System.Drawing.Size(762, 90);
             this.groupBoxAPI.TabIndex = 11;
             this.groupBoxAPI.TabStop = false;
             this.groupBoxAPI.Text = "API";
@@ -323,20 +327,20 @@
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel9, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 16);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 17);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 5F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(756, 78);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(756, 70);
             this.tableLayoutPanel1.TabIndex = 13;
             // 
             // buttonLoadApi
             // 
-            this.buttonLoadApi.Location = new System.Drawing.Point(678, 34);
+            this.buttonLoadApi.Location = new System.Drawing.Point(678, 32);
             this.buttonLoadApi.Name = "buttonLoadApi";
-            this.buttonLoadApi.Size = new System.Drawing.Size(75, 25);
+            this.buttonLoadApi.Size = new System.Drawing.Size(75, 23);
             this.buttonLoadApi.TabIndex = 12;
             this.buttonLoadApi.Text = "Load";
             this.buttonLoadApi.UseVisualStyleBackColor = true;
@@ -346,7 +350,7 @@
             // 
             this.buttonSaveApi.Location = new System.Drawing.Point(678, 3);
             this.buttonSaveApi.Name = "buttonSaveApi";
-            this.buttonSaveApi.Size = new System.Drawing.Size(75, 25);
+            this.buttonSaveApi.Size = new System.Drawing.Size(75, 23);
             this.buttonSaveApi.TabIndex = 11;
             this.buttonSaveApi.Text = "Save";
             this.buttonSaveApi.UseVisualStyleBackColor = true;
@@ -361,13 +365,41 @@
             this.tableLayoutPanel2.Controls.Add(this.textBoxApiHost, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.label3, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(55, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(59, 0);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(620, 31);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(616, 29);
             this.tableLayoutPanel2.TabIndex = 13;
+            // 
+            // tableLayoutPanel9
+            // 
+            this.tableLayoutPanel9.ColumnCount = 2;
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel9.Controls.Add(this.checkBoxShowCookies, 1, 0);
+            this.tableLayoutPanel9.Controls.Add(this.textBoxCookies, 0, 0);
+            this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(59, 29);
+            this.tableLayoutPanel9.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel9.Name = "tableLayoutPanel9";
+            this.tableLayoutPanel9.RowCount = 1;
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(616, 37);
+            this.tableLayoutPanel9.TabIndex = 14;
+            // 
+            // checkBoxShowCookies
+            // 
+            this.checkBoxShowCookies.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.checkBoxShowCookies.AutoSize = true;
+            this.checkBoxShowCookies.Location = new System.Drawing.Point(565, 10);
+            this.checkBoxShowCookies.Name = "checkBoxShowCookies";
+            this.checkBoxShowCookies.Size = new System.Drawing.Size(48, 16);
+            this.checkBoxShowCookies.TabIndex = 0;
+            this.checkBoxShowCookies.Text = "show";
+            this.checkBoxShowCookies.UseVisualStyleBackColor = true;
+            this.checkBoxShowCookies.CheckedChanged += new System.EventHandler(this.checkBoxShowCookies_CheckedChanged);
             // 
             // tableLayoutPanel7
             // 
@@ -376,12 +408,12 @@
             this.tableLayoutPanel7.Controls.Add(this.groupBoxAPI, 0, 0);
             this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel8, 0, 1);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 24);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 25);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 2;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(768, 426);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(768, 389);
             this.tableLayoutPanel7.TabIndex = 12;
             // 
             // tableLayoutPanel8
@@ -394,52 +426,32 @@
             this.tableLayoutPanel8.Controls.Add(this.groupBoxTo, 2, 0);
             this.tableLayoutPanel8.Controls.Add(this.buttonCopy, 1, 0);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 106);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 99);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 1;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(762, 317);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(762, 287);
             this.tableLayoutPanel8.TabIndex = 12;
             // 
-            // tableLayoutPanel9
+            // toolStripStatusLabel1
             // 
-            this.tableLayoutPanel9.ColumnCount = 2;
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel9.Controls.Add(this.checkBoxShowCookies, 1, 0);
-            this.tableLayoutPanel9.Controls.Add(this.textBoxCookies, 0, 0);
-            this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(58, 34);
-            this.tableLayoutPanel9.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel9.Name = "tableLayoutPanel9";
-            this.tableLayoutPanel9.RowCount = 1;
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(614, 40);
-            this.tableLayoutPanel9.TabIndex = 14;
-            // 
-            // checkBoxShowCookies
-            // 
-            this.checkBoxShowCookies.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.checkBoxShowCookies.AutoSize = true;
-            this.checkBoxShowCookies.Location = new System.Drawing.Point(560, 11);
-            this.checkBoxShowCookies.Name = "checkBoxShowCookies";
-            this.checkBoxShowCookies.Size = new System.Drawing.Size(51, 17);
-            this.checkBoxShowCookies.TabIndex = 0;
-            this.checkBoxShowCookies.Text = "show";
-            this.checkBoxShowCookies.UseVisualStyleBackColor = true;
-            this.checkBoxShowCookies.CheckedChanged += new System.EventHandler(this.checkBoxShowCookies_CheckedChanged);
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(54, 17);
+            this.toolStripStatusLabel1.Text = "copying";
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(768, 472);
+            this.ClientSize = new System.Drawing.Size(768, 436);
             this.Controls.Add(this.tableLayoutPanel7);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "JiraNow";
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.groupBoxFrom.ResumeLayout(false);
@@ -457,10 +469,10 @@
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            this.tableLayoutPanel7.ResumeLayout(false);
-            this.tableLayoutPanel8.ResumeLayout(false);
             this.tableLayoutPanel9.ResumeLayout(false);
             this.tableLayoutPanel9.PerformLayout();
+            this.tableLayoutPanel7.ResumeLayout(false);
+            this.tableLayoutPanel8.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -498,6 +510,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
         private System.Windows.Forms.CheckBox checkBoxShowCookies;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     }
 }
 

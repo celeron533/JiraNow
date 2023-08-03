@@ -34,18 +34,36 @@ namespace JiraNow
 
         private async void buttonFromFetch_Click(object sender, EventArgs e)
         {
+            await FetchSource();
+        }
+
+        async Task<JiraIssue> FetchSource()
+        {
             RenewService();
             string sourceID = textBoxFromId.Text;
+            textBoxFromPreview.Text = "Loading";
+            groupBoxFrom.Enabled = false;
             JiraIssue issue = await jiraService.GetIssue(sourceID, true);
+            groupBoxFrom.Enabled = true;
             textBoxFromPreview.Text = GetIssueDisplayString(issue, true);
+            return issue;
         }
 
         private async void buttonToFetch_Click(object sender, EventArgs e)
         {
+            await FetchDest();
+        }
+
+        async Task<JiraIssue> FetchDest()
+        {
             RenewService();
             string destID = textBoxToId.Text;
+            textBoxToPreview.Text = "Loading";
+            groupBoxTo.Enabled = false;
             JiraIssue issue = await jiraService.GetIssue(destID, true);
+            groupBoxTo.Enabled = true;
             textBoxToPreview.Text = GetIssueDisplayString(issue, true);
+            return issue;
         }
 
         private string GetIssueDisplayString(JiraIssue issue, bool includeChild = false)
@@ -90,23 +108,22 @@ namespace JiraNow
 
         private async void buttonCopy_Click(object sender, EventArgs e)
         {
-            RenewService();
-            string sourceID = textBoxFromId.Text;
-            JiraIssue sourceIssue = await jiraService.GetIssue(sourceID, true);
-            textBoxFromPreview.Text = GetIssueDisplayString(sourceIssue, true);
-
-            string destID = textBoxToId.Text;
-            JiraIssue destIssue = await jiraService.GetIssue(destID, true);
-            textBoxToPreview.Text = GetIssueDisplayString(destIssue, true);
+            this.Enabled = false;
+            var sourceTask = FetchSource();
+            var destTask = FetchDest();
+            await Task.WhenAll(sourceTask, destTask);
 
             try
             {
-                await jiraService.CopyChildIssues(sourceIssue, destIssue);
+                toolStripStatusLabel1.Text = "copying...";
+                await jiraService.CopyChildIssues(sourceTask.Result, destTask.Result);
             }
             catch (Exception ex) 
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.Message,"",MessageBoxButtons.OK,MessageBoxIcon.Stop);
             }
+            toolStripStatusLabel1.Text = "";
+            this.Enabled = true;
         }
 
         private void buttonSaveApi_Click(object sender, EventArgs e)
