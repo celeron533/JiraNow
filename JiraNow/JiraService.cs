@@ -32,12 +32,15 @@ namespace JiraNow
             issue = JiraIssue.Parse(issueMessage);
             if (includeDirectChild && string.IsNullOrEmpty(issue.ErrorMessage))
             {
-                //todo: extract the logic
-                JiraMessage searchResultMessage = await api.SearchIssue($"parent={issue.Key}"); //todo: order by
-
-                issue.ChildIssues = JiraSearchResult.Parse(searchResultMessage).Issues;
+                issue.ChildIssues = await GetChildIssues(issue);
             }
             return issue;
+        }
+
+        public async Task<IList<JiraIssue>> GetChildIssues(JiraIssue parentIssue)
+        {
+            JiraMessage searchResultMessage = await api.SearchIssue($"parent={parentIssue.Key}");
+            return JiraSearchResult.Parse(searchResultMessage).Issues?.OrderBy(i=>i.Key).ToList();
         }
 
         public async Task CopyChildIssues(string sourceIssueId, string destIssueId)

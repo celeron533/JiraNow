@@ -65,20 +65,23 @@ namespace JiraNow
             //.AppendLine($"Description: {issue.Description}");
             if (includeChild)
             {
-                sb.AppendLine($"====== Sub issues ({issue.ChildIssues.Count}) ======");
-                foreach (var child in issue.ChildIssues)
+                sb.AppendLine($"====== Sub issues ({issue.ChildIssues?.Count}) ======");
+                if (issue.ChildIssues != null)
                 {
-                    if (!string.IsNullOrEmpty(child.ErrorMessage))
+                    foreach (var child in issue.ChildIssues)
                     {
-                        sb.AppendLine(child.ErrorMessage);
-                    }
-                    else
-                    {
-                        sb.AppendLine($"> KEY:{child.Key}, ID: {child.Id}")
-                        .AppendLine($"  PROJECT: {child.Fields.Project.Id}, {child.Fields.Project.Name}")
-                        .AppendLine($"  TYPE: {child.Fields.Issuetype.Id}, {child.Fields.Issuetype.Name}")
-                        .AppendLine($"  Summary: {child.Fields.Summary}");
-                        //.AppendLine($"  Description: {child.Description}");
+                        if (!string.IsNullOrEmpty(child.ErrorMessage))
+                        {
+                            sb.AppendLine(child.ErrorMessage);
+                        }
+                        else
+                        {
+                            sb.AppendLine($"> KEY:{child.Key}, ID: {child.Id}")
+                            .AppendLine($"  PROJECT: {child.Fields.Project.Id}, {child.Fields.Project.Name}")
+                            .AppendLine($"  TYPE: {child.Fields.Issuetype.Id}, {child.Fields.Issuetype.Name}")
+                            .AppendLine($"  Summary: {child.Fields.Summary}");
+                            //.AppendLine($"  Description: {child.Description}");
+                        }
                     }
                 }
             }
