@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textBoxApiHost = new System.Windows.Forms.TextBox();
@@ -58,7 +59,6 @@
             this.checkBoxShowCookies = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.groupBoxFrom.SuspendLayout();
@@ -84,6 +84,12 @@
             this.statusStrip1.Size = new System.Drawing.Size(768, 22);
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(54, 17);
+            this.toolStripStatusLabel1.Text = "copying";
             // 
             // menuStrip1
             // 
@@ -198,7 +204,6 @@
             this.textBoxFromId.Name = "textBoxFromId";
             this.textBoxFromId.Size = new System.Drawing.Size(124, 21);
             this.textBoxFromId.TabIndex = 6;
-            this.textBoxFromId.Text = "SAM-1";
             // 
             // buttonFromFetch
             // 
@@ -268,7 +273,6 @@
             this.textBoxToId.Name = "textBoxToId";
             this.textBoxToId.Size = new System.Drawing.Size(124, 21);
             this.textBoxToId.TabIndex = 7;
-            this.textBoxToId.Text = "SAM-2";
             // 
             // buttonToFetch
             // 
@@ -433,12 +437,6 @@
             this.tableLayoutPanel8.Size = new System.Drawing.Size(762, 287);
             this.tableLayoutPanel8.TabIndex = 12;
             // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(54, 17);
-            this.toolStripStatusLabel1.Text = "copying";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -450,6 +448,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "JiraNow";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);

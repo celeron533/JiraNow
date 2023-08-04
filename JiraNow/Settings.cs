@@ -17,5 +17,7 @@ namespace JiraNow
         public string HostString { get; set; }
         public string CookiesString { get; set; }
 
+        public string SourceIssueKey { get; set; }
+        public string DestIssueKey { get; set; }
     }
 }

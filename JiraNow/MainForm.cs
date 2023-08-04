@@ -25,6 +25,7 @@ namespace JiraNow
         void Init()
         {
             LoadSettings();
+            LoadHistory();
         }
 
         private void RenewService()
@@ -143,6 +144,13 @@ namespace JiraNow
             SettingsManager.SaveSettings(settings);
         }
 
+        void SaveHistory()
+        {
+            settings.SourceIssueKey = textBoxFromId.Text;
+            settings.DestIssueKey = textBoxToId.Text;
+            SettingsManager.SaveSettings(settings);
+        }
+
         void LoadSettings()
         {
             settings = SettingsManager.LoadSettings();
@@ -150,9 +158,21 @@ namespace JiraNow
             textBoxCookies.Text = settings.CookiesString;
         }
 
+        void LoadHistory()
+        {
+            settings = SettingsManager.LoadSettings();
+            textBoxFromId.Text = settings.SourceIssueKey;
+            textBoxToId.Text = settings.DestIssueKey;
+        }
+
         private void checkBoxShowCookies_CheckedChanged(object sender, EventArgs e)
         {
             textBoxCookies.PasswordChar = ((CheckBox) sender).Checked ? (char)0 : '*';
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            SaveHistory();
         }
     }
 }
