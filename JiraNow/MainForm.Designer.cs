@@ -36,18 +36,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxCookies = new System.Windows.Forms.TextBox();
-            this.groupBoxFrom = new System.Windows.Forms.GroupBox();
+            this.groupBoxSource = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBoxFromPreview = new System.Windows.Forms.TextBox();
+            this.textBoxPreviewSourceIssue = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBoxFromId = new System.Windows.Forms.TextBox();
-            this.buttonFromFetch = new System.Windows.Forms.Button();
-            this.groupBoxTo = new System.Windows.Forms.GroupBox();
+            this.textBoxSourceIssueKey = new System.Windows.Forms.TextBox();
+            this.buttonFetchSourceIssue = new System.Windows.Forms.Button();
+            this.groupBoxDest = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBoxToPreview = new System.Windows.Forms.TextBox();
+            this.textBoxPreviewDestIssue = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBoxToId = new System.Windows.Forms.TextBox();
-            this.buttonToFetch = new System.Windows.Forms.Button();
+            this.textBoxDestIssueKey = new System.Windows.Forms.TextBox();
+            this.buttonFetchDestIssue = new System.Windows.Forms.Button();
             this.buttonCopy = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBoxAPI = new System.Windows.Forms.GroupBox();
@@ -61,10 +61,10 @@
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            this.groupBoxFrom.SuspendLayout();
+            this.groupBoxSource.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
-            this.groupBoxTo.SuspendLayout();
+            this.groupBoxDest.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.groupBoxAPI.SuspendLayout();
@@ -146,22 +146,22 @@
             this.textBoxCookies.Size = new System.Drawing.Size(551, 31);
             this.textBoxCookies.TabIndex = 5;
             // 
-            // groupBoxFrom
+            // groupBoxSource
             // 
-            this.groupBoxFrom.Controls.Add(this.tableLayoutPanel3);
-            this.groupBoxFrom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBoxFrom.Location = new System.Drawing.Point(3, 3);
-            this.groupBoxFrom.Name = "groupBoxFrom";
-            this.groupBoxFrom.Size = new System.Drawing.Size(337, 281);
-            this.groupBoxFrom.TabIndex = 6;
-            this.groupBoxFrom.TabStop = false;
-            this.groupBoxFrom.Text = "From";
+            this.groupBoxSource.Controls.Add(this.tableLayoutPanel3);
+            this.groupBoxSource.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBoxSource.Location = new System.Drawing.Point(3, 3);
+            this.groupBoxSource.Name = "groupBoxSource";
+            this.groupBoxSource.Size = new System.Drawing.Size(337, 281);
+            this.groupBoxSource.TabIndex = 6;
+            this.groupBoxSource.TabStop = false;
+            this.groupBoxSource.Text = "Source Issue";
             // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Controls.Add(this.textBoxFromPreview, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.textBoxPreviewSourceIssue, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel5, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 17);
@@ -172,15 +172,15 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(331, 261);
             this.tableLayoutPanel3.TabIndex = 9;
             // 
-            // textBoxFromPreview
+            // textBoxPreviewSourceIssue
             // 
-            this.textBoxFromPreview.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxFromPreview.Location = new System.Drawing.Point(3, 46);
-            this.textBoxFromPreview.Multiline = true;
-            this.textBoxFromPreview.Name = "textBoxFromPreview";
-            this.textBoxFromPreview.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxFromPreview.Size = new System.Drawing.Size(325, 212);
-            this.textBoxFromPreview.TabIndex = 8;
+            this.textBoxPreviewSourceIssue.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxPreviewSourceIssue.Location = new System.Drawing.Point(3, 46);
+            this.textBoxPreviewSourceIssue.Multiline = true;
+            this.textBoxPreviewSourceIssue.Name = "textBoxPreviewSourceIssue";
+            this.textBoxPreviewSourceIssue.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxPreviewSourceIssue.Size = new System.Drawing.Size(325, 212);
+            this.textBoxPreviewSourceIssue.TabIndex = 8;
             // 
             // tableLayoutPanel5
             // 
@@ -188,8 +188,8 @@
             this.tableLayoutPanel5.ColumnCount = 2;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel5.Controls.Add(this.textBoxFromId, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.buttonFromFetch, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.textBoxSourceIssueKey, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.buttonFetchSourceIssue, 1, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
@@ -198,39 +198,39 @@
             this.tableLayoutPanel5.Size = new System.Drawing.Size(325, 37);
             this.tableLayoutPanel5.TabIndex = 9;
             // 
-            // textBoxFromId
+            // textBoxSourceIssueKey
             // 
-            this.textBoxFromId.Location = new System.Drawing.Point(3, 3);
-            this.textBoxFromId.Name = "textBoxFromId";
-            this.textBoxFromId.Size = new System.Drawing.Size(124, 21);
-            this.textBoxFromId.TabIndex = 6;
+            this.textBoxSourceIssueKey.Location = new System.Drawing.Point(3, 3);
+            this.textBoxSourceIssueKey.Name = "textBoxSourceIssueKey";
+            this.textBoxSourceIssueKey.Size = new System.Drawing.Size(124, 21);
+            this.textBoxSourceIssueKey.TabIndex = 6;
             // 
-            // buttonFromFetch
+            // buttonFetchSourceIssue
             // 
-            this.buttonFromFetch.Location = new System.Drawing.Point(247, 3);
-            this.buttonFromFetch.Name = "buttonFromFetch";
-            this.buttonFromFetch.Size = new System.Drawing.Size(75, 23);
-            this.buttonFromFetch.TabIndex = 7;
-            this.buttonFromFetch.Text = "Fetch";
-            this.buttonFromFetch.UseVisualStyleBackColor = true;
-            this.buttonFromFetch.Click += new System.EventHandler(this.buttonFromFetch_Click);
+            this.buttonFetchSourceIssue.Location = new System.Drawing.Point(247, 3);
+            this.buttonFetchSourceIssue.Name = "buttonFetchSourceIssue";
+            this.buttonFetchSourceIssue.Size = new System.Drawing.Size(75, 23);
+            this.buttonFetchSourceIssue.TabIndex = 7;
+            this.buttonFetchSourceIssue.Text = "Fetch";
+            this.buttonFetchSourceIssue.UseVisualStyleBackColor = true;
+            this.buttonFetchSourceIssue.Click += new System.EventHandler(this.buttonFetchSourceIssue_Click);
             // 
-            // groupBoxTo
+            // groupBoxDest
             // 
-            this.groupBoxTo.Controls.Add(this.tableLayoutPanel4);
-            this.groupBoxTo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBoxTo.Location = new System.Drawing.Point(422, 3);
-            this.groupBoxTo.Name = "groupBoxTo";
-            this.groupBoxTo.Size = new System.Drawing.Size(337, 281);
-            this.groupBoxTo.TabIndex = 7;
-            this.groupBoxTo.TabStop = false;
-            this.groupBoxTo.Text = "To";
+            this.groupBoxDest.Controls.Add(this.tableLayoutPanel4);
+            this.groupBoxDest.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBoxDest.Location = new System.Drawing.Point(422, 3);
+            this.groupBoxDest.Name = "groupBoxDest";
+            this.groupBoxDest.Size = new System.Drawing.Size(337, 281);
+            this.groupBoxDest.TabIndex = 7;
+            this.groupBoxDest.TabStop = false;
+            this.groupBoxDest.Text = "Destination Issue";
             // 
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 1;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Controls.Add(this.textBoxToPreview, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.textBoxPreviewDestIssue, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel6, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 17);
@@ -241,15 +241,15 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(331, 261);
             this.tableLayoutPanel4.TabIndex = 10;
             // 
-            // textBoxToPreview
+            // textBoxPreviewDestIssue
             // 
-            this.textBoxToPreview.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxToPreview.Location = new System.Drawing.Point(3, 46);
-            this.textBoxToPreview.Multiline = true;
-            this.textBoxToPreview.Name = "textBoxToPreview";
-            this.textBoxToPreview.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxToPreview.Size = new System.Drawing.Size(325, 212);
-            this.textBoxToPreview.TabIndex = 9;
+            this.textBoxPreviewDestIssue.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxPreviewDestIssue.Location = new System.Drawing.Point(3, 46);
+            this.textBoxPreviewDestIssue.Multiline = true;
+            this.textBoxPreviewDestIssue.Name = "textBoxPreviewDestIssue";
+            this.textBoxPreviewDestIssue.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxPreviewDestIssue.Size = new System.Drawing.Size(325, 212);
+            this.textBoxPreviewDestIssue.TabIndex = 9;
             // 
             // tableLayoutPanel6
             // 
@@ -257,8 +257,8 @@
             this.tableLayoutPanel6.ColumnCount = 2;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel6.Controls.Add(this.textBoxToId, 0, 0);
-            this.tableLayoutPanel6.Controls.Add(this.buttonToFetch, 1, 0);
+            this.tableLayoutPanel6.Controls.Add(this.textBoxDestIssueKey, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.buttonFetchDestIssue, 1, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
@@ -267,22 +267,22 @@
             this.tableLayoutPanel6.Size = new System.Drawing.Size(325, 37);
             this.tableLayoutPanel6.TabIndex = 10;
             // 
-            // textBoxToId
+            // textBoxDestIssueKey
             // 
-            this.textBoxToId.Location = new System.Drawing.Point(3, 3);
-            this.textBoxToId.Name = "textBoxToId";
-            this.textBoxToId.Size = new System.Drawing.Size(124, 21);
-            this.textBoxToId.TabIndex = 7;
+            this.textBoxDestIssueKey.Location = new System.Drawing.Point(3, 3);
+            this.textBoxDestIssueKey.Name = "textBoxDestIssueKey";
+            this.textBoxDestIssueKey.Size = new System.Drawing.Size(124, 21);
+            this.textBoxDestIssueKey.TabIndex = 7;
             // 
-            // buttonToFetch
+            // buttonFetchDestIssue
             // 
-            this.buttonToFetch.Location = new System.Drawing.Point(247, 3);
-            this.buttonToFetch.Name = "buttonToFetch";
-            this.buttonToFetch.Size = new System.Drawing.Size(75, 23);
-            this.buttonToFetch.TabIndex = 8;
-            this.buttonToFetch.Text = "Fetch";
-            this.buttonToFetch.UseVisualStyleBackColor = true;
-            this.buttonToFetch.Click += new System.EventHandler(this.buttonToFetch_Click);
+            this.buttonFetchDestIssue.Location = new System.Drawing.Point(247, 3);
+            this.buttonFetchDestIssue.Name = "buttonFetchDestIssue";
+            this.buttonFetchDestIssue.Size = new System.Drawing.Size(75, 23);
+            this.buttonFetchDestIssue.TabIndex = 8;
+            this.buttonFetchDestIssue.Text = "Fetch";
+            this.buttonFetchDestIssue.UseVisualStyleBackColor = true;
+            this.buttonFetchDestIssue.Click += new System.EventHandler(this.buttonFetchDestIssue_Click);
             // 
             // buttonCopy
             // 
@@ -426,8 +426,8 @@
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.Controls.Add(this.groupBoxFrom, 0, 0);
-            this.tableLayoutPanel8.Controls.Add(this.groupBoxTo, 2, 0);
+            this.tableLayoutPanel8.Controls.Add(this.groupBoxSource, 0, 0);
+            this.tableLayoutPanel8.Controls.Add(this.groupBoxDest, 2, 0);
             this.tableLayoutPanel8.Controls.Add(this.buttonCopy, 1, 0);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 99);
@@ -453,12 +453,12 @@
             this.statusStrip1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.groupBoxFrom.ResumeLayout(false);
+            this.groupBoxSource.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
-            this.groupBoxTo.ResumeLayout(false);
+            this.groupBoxDest.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
             this.tableLayoutPanel6.ResumeLayout(false);
@@ -486,14 +486,14 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxCookies;
-        private System.Windows.Forms.GroupBox groupBoxFrom;
-        private System.Windows.Forms.GroupBox groupBoxTo;
-        private System.Windows.Forms.Button buttonFromFetch;
-        private System.Windows.Forms.TextBox textBoxFromId;
-        private System.Windows.Forms.Button buttonToFetch;
-        private System.Windows.Forms.TextBox textBoxToId;
-        private System.Windows.Forms.TextBox textBoxFromPreview;
-        private System.Windows.Forms.TextBox textBoxToPreview;
+        private System.Windows.Forms.GroupBox groupBoxSource;
+        private System.Windows.Forms.GroupBox groupBoxDest;
+        private System.Windows.Forms.Button buttonFetchSourceIssue;
+        private System.Windows.Forms.TextBox textBoxSourceIssueKey;
+        private System.Windows.Forms.Button buttonFetchDestIssue;
+        private System.Windows.Forms.TextBox textBoxDestIssueKey;
+        private System.Windows.Forms.TextBox textBoxPreviewSourceIssue;
+        private System.Windows.Forms.TextBox textBoxPreviewDestIssue;
         private System.Windows.Forms.Button buttonCopy;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBoxAPI;

@@ -33,7 +33,7 @@ namespace JiraNow
             jiraService = new JiraService(settings);
         }
 
-        private async void buttonFromFetch_Click(object sender, EventArgs e)
+        private async void buttonFetchSourceIssue_Click(object sender, EventArgs e)
         {
             await FetchSource();
         }
@@ -41,16 +41,16 @@ namespace JiraNow
         async Task<JiraIssue> FetchSource()
         {
             RenewService();
-            string sourceID = textBoxFromId.Text;
-            textBoxFromPreview.Text = "Loading";
-            groupBoxFrom.Enabled = false;
+            string sourceID = textBoxSourceIssueKey.Text;
+            textBoxPreviewSourceIssue.Text = "Loading";
+            groupBoxSource.Enabled = false;
             JiraIssue issue = await jiraService.GetIssue(sourceID, true);
-            groupBoxFrom.Enabled = true;
-            textBoxFromPreview.Text = GetIssueDisplayString(issue, true);
+            groupBoxSource.Enabled = true;
+            textBoxPreviewSourceIssue.Text = GetIssueDisplayString(issue, true);
             return issue;
         }
 
-        private async void buttonToFetch_Click(object sender, EventArgs e)
+        private async void buttonFetchDestIssue_Click(object sender, EventArgs e)
         {
             await FetchDest();
         }
@@ -58,12 +58,12 @@ namespace JiraNow
         async Task<JiraIssue> FetchDest()
         {
             RenewService();
-            string destID = textBoxToId.Text;
-            textBoxToPreview.Text = "Loading";
-            groupBoxTo.Enabled = false;
+            string destID = textBoxDestIssueKey.Text;
+            textBoxPreviewDestIssue.Text = "Loading";
+            groupBoxDest.Enabled = false;
             JiraIssue issue = await jiraService.GetIssue(destID, true);
-            groupBoxTo.Enabled = true;
-            textBoxToPreview.Text = GetIssueDisplayString(issue, true);
+            groupBoxDest.Enabled = true;
+            textBoxPreviewDestIssue.Text = GetIssueDisplayString(issue, true);
             return issue;
         }
 
@@ -146,8 +146,8 @@ namespace JiraNow
 
         void SaveHistory()
         {
-            settings.SourceIssueKey = textBoxFromId.Text;
-            settings.DestIssueKey = textBoxToId.Text;
+            settings.SourceIssueKey = textBoxSourceIssueKey.Text;
+            settings.DestIssueKey = textBoxDestIssueKey.Text;
             SettingsManager.SaveSettings(settings);
         }
 
@@ -161,8 +161,8 @@ namespace JiraNow
         void LoadHistory()
         {
             settings = SettingsManager.LoadSettings();
-            textBoxFromId.Text = settings.SourceIssueKey;
-            textBoxToId.Text = settings.DestIssueKey;
+            textBoxSourceIssueKey.Text = settings.SourceIssueKey;
+            textBoxDestIssueKey.Text = settings.DestIssueKey;
         }
 
         private void checkBoxShowCookies_CheckedChanged(object sender, EventArgs e)
