@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -24,6 +25,9 @@ namespace JiraNow
 
         void Init()
         {
+            Assembly CurrentAssembly = Assembly.GetExecutingAssembly();
+            System.Diagnostics.FileVersionInfo fileVersionInfo = System.Diagnostics.FileVersionInfo.GetVersionInfo(CurrentAssembly.Location);
+            this.Text += " v" + fileVersionInfo.FileVersion.ToString();
             LoadSettings();
             LoadHistory();
         }
