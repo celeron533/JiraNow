@@ -88,8 +88,8 @@
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(54, 17);
-            this.toolStripStatusLabel1.Text = "copying";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(236, 17);
+            this.toolStripStatusLabel1.Text = "https://github.com/celeron533/JiraNow";
             // 
             // menuStrip1
             // 
