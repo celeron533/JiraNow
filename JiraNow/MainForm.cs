@@ -73,7 +73,7 @@ namespace JiraNow
 
         private string GetIssueDisplayString(JiraIssue issue, bool includeChild = false)
         {
-            if (issue == null) return null;
+            if (issue == null || issue.Id == null) return null;
 
             StringBuilder sb = new StringBuilder();
             if (!string.IsNullOrEmpty(issue.ErrorMessage))
