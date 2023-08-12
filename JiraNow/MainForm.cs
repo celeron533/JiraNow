@@ -83,6 +83,7 @@ namespace JiraNow
             sb.AppendLine($"KEY:{issue.Key}, ID: {issue.Id}")
                 .AppendLine($"PROJECT: {issue.Fields.Project.Id}, {issue.Fields.Project.Name}")
                 .AppendLine($"TYPE: {issue.Fields.Issuetype.Id}, {issue.Fields.Issuetype.Name}")
+                .AppendLine($"SUB-TASK: {issue.Fields.Issuetype.Subtask}")
                 .AppendLine($"Summary: {issue.Fields.Summary}");
             
             //.AppendLine($"Description: {issue.Description}");
@@ -102,6 +103,7 @@ namespace JiraNow
                             sb.AppendLine($"> KEY:{child.Key}, ID: {child.Id}")
                             .AppendLine($"  PROJECT: {child.Fields.Project.Id}, {child.Fields.Project.Name}")
                             .AppendLine($"  TYPE: {child.Fields.Issuetype.Id}, {child.Fields.Issuetype.Name}")
+                            .AppendLine($"  SUB-TASK: {child.Fields.Issuetype.Subtask}")
                             .AppendLine($"  Summary: {child.Fields.Summary}");
                             //.AppendLine($"  Description: {child.Description}");
                         }
