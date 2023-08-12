@@ -58,12 +58,14 @@ namespace JiraNow
             //validation
             if (!string.IsNullOrEmpty(sourceIssue.ErrorMessage) || !string.IsNullOrEmpty(destIssue.ErrorMessage))
             {
-                throw new Exception("Error when fetching the issue");
+                throw new Exception("Error when fetching the issue." +Environment.NewLine+
+                    $"SourceIssue: {sourceIssue.ErrorMessage}" + Environment.NewLine+
+                    $"DestinationIssue: {destIssue.ErrorMessage}");
             }
 
             if (sourceIssue.Fields.Issuetype.Id != destIssue.Fields.Issuetype.Id)
             {
-                throw new NotSupportedException("Source and destination issue type are different");
+                throw new NotSupportedException($"Source and destination issue type are different. Source: {sourceIssue.Fields.Issuetype.Name}, Dest: {destIssue.Fields.Issuetype.Name}");
             }
 
             IList<JiraIssue> destNewChildIssues = new List<JiraIssue>();
