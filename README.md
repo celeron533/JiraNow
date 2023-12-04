@@ -1,5 +1,5 @@
 # JiraNow
-This is a tiny tool to accelarate some of my daily work with Jira Software.<br>
+This is a tiny tool to accelerate some of my daily work with Jira Software.<br>
 Uses Jira REST API v3.<br>
 Based on Winform and only for Windows(R) right now.
 
